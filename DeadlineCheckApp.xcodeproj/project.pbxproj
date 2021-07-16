@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5405A89026A1256C000EBD32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A88F26A1256C000EBD32 /* AppDelegate.swift */; };
+		5405A89226A1256C000EBD32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A89126A1256C000EBD32 /* SceneDelegate.swift */; };
+		5405A89426A1256C000EBD32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A89326A1256C000EBD32 /* ViewController.swift */; };
+		5405A89726A1256C000EBD32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5405A89526A1256C000EBD32 /* Main.storyboard */; };
+		5405A89926A1256E000EBD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5405A89826A1256E000EBD32 /* Assets.xcassets */; };
+		5405A89C26A1256E000EBD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5405A89A26A1256E000EBD32 /* LaunchScreen.storyboard */; };
+		5405A8A726A13E3B000EBD32 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8A626A13E3B000EBD32 /* SearchViewController.swift */; };
+		5405A8A926A1457F000EBD32 /* RealmDataSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8A826A1457F000EBD32 /* RealmDataSets.swift */; };
+		5405A8AB26A146A5000EBD32 /* RealmCRUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8AA26A146A5000EBD32 /* RealmCRUDModel.swift */; };
+		5405A8AD26A146C5000EBD32 /* TodayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8AC26A146C5000EBD32 /* TodayListViewController.swift */; };
+		5405A8B126A147AD000EBD32 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B026A147AD000EBD32 /* Calendar.swift */; };
+		5405A8B726A1664B000EBD32 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B626A1664B000EBD32 /* Alert.swift */; };
+		5405A8B926A191E1000EBD32 /* GetDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B826A191E1000EBD32 /* GetDateModel.swift */; };
+		AD21A8F9F0D943983368133F /* Pods_DeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CD39FBDF06CE4D3C495709 /* Pods_DeadlineCheckApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5405A88C26A1256C000EBD32 /* DeadlineCheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeadlineCheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5405A88F26A1256C000EBD32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5405A89126A1256C000EBD32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5405A89326A1256C000EBD32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5405A89626A1256C000EBD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5405A89826A1256E000EBD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5405A89B26A1256E000EBD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5405A89D26A1256E000EBD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5405A8A626A13E3B000EBD32 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5405A8A826A1457F000EBD32 /* RealmDataSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataSets.swift; sourceTree = "<group>"; };
+		5405A8AA26A146A5000EBD32 /* RealmCRUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCRUDModel.swift; sourceTree = "<group>"; };
+		5405A8AC26A146C5000EBD32 /* TodayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayListViewController.swift; sourceTree = "<group>"; };
+		5405A8B026A147AD000EBD32 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		5405A8B626A1664B000EBD32 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		5405A8B826A191E1000EBD32 /* GetDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDateModel.swift; sourceTree = "<group>"; };
+		63CD39FBDF06CE4D3C495709 /* Pods_DeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		857EEA8CA381331562F2FCD3 /* Pods-DeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
+		EC872CD07BAF7F81C9D8C40C /* Pods-DeadlineCheckApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeadlineCheckApp.debug.xcconfig"; path = "Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5405A88926A1256C000EBD32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD21A8F9F0D943983368133F /* Pods_DeadlineCheckApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		163465481ADC6FD1438E7E35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC872CD07BAF7F81C9D8C40C /* Pods-DeadlineCheckApp.debug.xcconfig */,
+				857EEA8CA381331562F2FCD3 /* Pods-DeadlineCheckApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3F68EFFCA5834CBE82774E7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63CD39FBDF06CE4D3C495709 /* Pods_DeadlineCheckApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5405A88326A1256C000EBD32 = {
+			isa = PBXGroup;
+			children = (
+				5405A88E26A1256C000EBD32 /* DeadlineCheckApp */,
+				5405A88D26A1256C000EBD32 /* Products */,
+				163465481ADC6FD1438E7E35 /* Pods */,
+				3F68EFFCA5834CBE82774E7C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5405A88D26A1256C000EBD32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5405A88C26A1256C000EBD32 /* DeadlineCheckApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5405A88E26A1256C000EBD32 /* DeadlineCheckApp */ = {
+			isa = PBXGroup;
+			children = (
+				5405A88F26A1256C000EBD32 /* AppDelegate.swift */,
+				5405A89126A1256C000EBD32 /* SceneDelegate.swift */,
+				5405A8A526A132F7000EBD32 /* Model */,
+				5405A8A426A132F1000EBD32 /* View */,
+				5405A8A326A132E7000EBD32 /* Controller */,
+				5405A89A26A1256E000EBD32 /* LaunchScreen.storyboard */,
+				5405A89D26A1256E000EBD32 /* Info.plist */,
+			);
+			path = DeadlineCheckApp;
+			sourceTree = "<group>";
+		};
+		5405A8A326A132E7000EBD32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5405A89326A1256C000EBD32 /* ViewController.swift */,
+				5405A8A626A13E3B000EBD32 /* SearchViewController.swift */,
+				5405A8AC26A146C5000EBD32 /* TodayListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5405A8A426A132F1000EBD32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5405A89526A1256C000EBD32 /* Main.storyboard */,
+				5405A89826A1256E000EBD32 /* Assets.xcassets */,
+				5405A8B026A147AD000EBD32 /* Calendar.swift */,
+				5405A8B626A1664B000EBD32 /* Alert.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5405A8A526A132F7000EBD32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5405A8A826A1457F000EBD32 /* RealmDataSets.swift */,
+				5405A8AA26A146A5000EBD32 /* RealmCRUDModel.swift */,
+				5405A8B826A191E1000EBD32 /* GetDateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5405A88B26A1256C000EBD32 /* DeadlineCheckApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5405A8A026A1256E000EBD32 /* Build configuration list for PBXNativeTarget "DeadlineCheckApp" */;
+			buildPhases = (
+				EF185E0C83DA425033160491 /* [CP] Check Pods Manifest.lock */,
+				5405A88826A1256C000EBD32 /* Sources */,
+				5405A88926A1256C000EBD32 /* Frameworks */,
+				5405A88A26A1256C000EBD32 /* Resources */,
+				2E56082A71BE05A8E98DC4C4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeadlineCheckApp;
+			productName = DeadlineCheckApp;
+			productReference = 5405A88C26A1256C000EBD32 /* DeadlineCheckApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5405A88426A1256C000EBD32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					5405A88B26A1256C000EBD32 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 5405A88726A1256C000EBD32 /* Build configuration list for PBXProject "DeadlineCheckApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5405A88326A1256C000EBD32;
+			productRefGroup = 5405A88D26A1256C000EBD32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5405A88B26A1256C000EBD32 /* DeadlineCheckApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5405A88A26A1256C000EBD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5405A89C26A1256E000EBD32 /* LaunchScreen.storyboard in Resources */,
+				5405A89926A1256E000EBD32 /* Assets.xcassets in Resources */,
+				5405A89726A1256C000EBD32 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E56082A71BE05A8E98DC4C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF185E0C83DA425033160491 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeadlineCheckApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5405A88826A1256C000EBD32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5405A8B726A1664B000EBD32 /* Alert.swift in Sources */,
+				5405A8AD26A146C5000EBD32 /* TodayListViewController.swift in Sources */,
+				5405A89426A1256C000EBD32 /* ViewController.swift in Sources */,
+				5405A89026A1256C000EBD32 /* AppDelegate.swift in Sources */,
+				5405A8B126A147AD000EBD32 /* Calendar.swift in Sources */,
+				5405A8A926A1457F000EBD32 /* RealmDataSets.swift in Sources */,
+				5405A8B926A191E1000EBD32 /* GetDateModel.swift in Sources */,
+				5405A8A726A13E3B000EBD32 /* SearchViewController.swift in Sources */,
+				5405A89226A1256C000EBD32 /* SceneDelegate.swift in Sources */,
+				5405A8AB26A146A5000EBD32 /* RealmCRUDModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5405A89526A1256C000EBD32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5405A89626A1256C000EBD32 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5405A89A26A1256E000EBD32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5405A89B26A1256E000EBD32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5405A89E26A1256E000EBD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5405A89F26A1256E000EBD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5405A8A126A1256E000EBD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC872CD07BAF7F81C9D8C40C /* Pods-DeadlineCheckApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DeadlineCheckApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DeadlineCheck.DeadlineCheckApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5405A8A226A1256E000EBD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 857EEA8CA381331562F2FCD3 /* Pods-DeadlineCheckApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DeadlineCheckApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DeadlineCheck.DeadlineCheckApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5405A88726A1256C000EBD32 /* Build configuration list for PBXProject "DeadlineCheckApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5405A89E26A1256E000EBD32 /* Debug */,
+				5405A89F26A1256E000EBD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5405A8A026A1256E000EBD32 /* Build configuration list for PBXNativeTarget "DeadlineCheckApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5405A8A126A1256E000EBD32 /* Debug */,
+				5405A8A226A1256E000EBD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5405A88426A1256C000EBD32 /* Project object */;
+}
