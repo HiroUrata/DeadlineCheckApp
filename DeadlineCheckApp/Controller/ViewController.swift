@@ -31,8 +31,9 @@ class ViewController: UIViewController{
         self.tableView.dataSource = self
         
         self.getDateModel.todayGetDate()
+        print(self.getDateModel.todayDate)
         
-        self.realmCRUDModel.filterDayReadRealm(selectDay: self.getDateModel.todayDate, targetView: self)
+        //self.realmCRUDModel.filterDayReadRealm(selectDay: self.getDateModel.todayDate, targetView: self)
         
     }
 
@@ -91,17 +92,17 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
+
         let cellProductLabel = cell.contentView.viewWithTag(1) as! UILabel
         let cellJANLabel = cell.contentView.viewWithTag(2) as! UILabel
         let cellDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
-        
+
         cellProductLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmProductName"]
         cellJANLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmJANCode"]
         cellDeadlineLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmDeadlineDay"]
-        
+
         cell.layer.cornerRadius = 20.0
-        
+
         return cell
     }
     
