@@ -20,6 +20,11 @@
 		5405A8B126A147AD000EBD32 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B026A147AD000EBD32 /* Calendar.swift */; };
 		5405A8B726A1664B000EBD32 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B626A1664B000EBD32 /* Alert.swift */; };
 		5405A8B926A191E1000EBD32 /* GetDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B826A191E1000EBD32 /* GetDateModel.swift */; };
+		54A042F726ABBF4E00CF4B20 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A042F626ABBF4E00CF4B20 /* NavigationButton.swift */; };
+		54A042FF26ABD08700CF4B20 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A042FE26ABD08700CF4B20 /* TabBarController.swift */; };
+		54A0430126AC089500CF4B20 /* HalfView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A0430026AC089500CF4B20 /* HalfView.xib */; };
+		54A0430326AC08A100CF4B20 /* HalfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0430226AC08A100CF4B20 /* HalfView.swift */; };
+		54A0430526AC08B200CF4B20 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0430426AC08B200CF4B20 /* PresentationModel.swift */; };
 		AD21A8F9F0D943983368133F /* Pods_DeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CD39FBDF06CE4D3C495709 /* Pods_DeadlineCheckApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +44,11 @@
 		5405A8B026A147AD000EBD32 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		5405A8B626A1664B000EBD32 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5405A8B826A191E1000EBD32 /* GetDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDateModel.swift; sourceTree = "<group>"; };
+		54A042F626ABBF4E00CF4B20 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		54A042FE26ABD08700CF4B20 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		54A0430026AC089500CF4B20 /* HalfView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HalfView.xib; sourceTree = "<group>"; };
+		54A0430226AC08A100CF4B20 /* HalfView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfView.swift; sourceTree = "<group>"; };
+		54A0430426AC08B200CF4B20 /* PresentationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
 		63CD39FBDF06CE4D3C495709 /* Pods_DeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		857EEA8CA381331562F2FCD3 /* Pods-DeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
 		EC872CD07BAF7F81C9D8C40C /* Pods-DeadlineCheckApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeadlineCheckApp.debug.xcconfig"; path = "Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +118,7 @@
 		5405A8A326A132E7000EBD32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				54A042FE26ABD08700CF4B20 /* TabBarController.swift */,
 				5405A89326A1256C000EBD32 /* ViewController.swift */,
 				5405A8A626A13E3B000EBD32 /* SearchViewController.swift */,
 				5405A8AC26A146C5000EBD32 /* TodayListViewController.swift */,
@@ -119,9 +130,13 @@
 			isa = PBXGroup;
 			children = (
 				5405A89526A1256C000EBD32 /* Main.storyboard */,
+				54A0430026AC089500CF4B20 /* HalfView.xib */,
 				5405A89826A1256E000EBD32 /* Assets.xcassets */,
+				54A0430226AC08A100CF4B20 /* HalfView.swift */,
+				54A0430426AC08B200CF4B20 /* PresentationModel.swift */,
 				5405A8B026A147AD000EBD32 /* Calendar.swift */,
 				5405A8B626A1664B000EBD32 /* Alert.swift */,
+				54A042F626ABBF4E00CF4B20 /* NavigationButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +213,7 @@
 				5405A89C26A1256E000EBD32 /* LaunchScreen.storyboard in Resources */,
 				5405A89926A1256E000EBD32 /* Assets.xcassets in Resources */,
 				5405A89726A1256C000EBD32 /* Main.storyboard in Resources */,
+				54A0430126AC089500CF4B20 /* HalfView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +269,15 @@
 				5405A8B726A1664B000EBD32 /* Alert.swift in Sources */,
 				5405A8AD26A146C5000EBD32 /* TodayListViewController.swift in Sources */,
 				5405A89426A1256C000EBD32 /* ViewController.swift in Sources */,
+				54A0430526AC08B200CF4B20 /* PresentationModel.swift in Sources */,
 				5405A89026A1256C000EBD32 /* AppDelegate.swift in Sources */,
 				5405A8B126A147AD000EBD32 /* Calendar.swift in Sources */,
 				5405A8A926A1457F000EBD32 /* RealmDataSets.swift in Sources */,
 				5405A8B926A191E1000EBD32 /* GetDateModel.swift in Sources */,
+				54A0430326AC08A100CF4B20 /* HalfView.swift in Sources */,
+				54A042F726ABBF4E00CF4B20 /* NavigationButton.swift in Sources */,
 				5405A8A726A13E3B000EBD32 /* SearchViewController.swift in Sources */,
+				54A042FF26ABD08700CF4B20 /* TabBarController.swift in Sources */,
 				5405A89226A1256C000EBD32 /* SceneDelegate.swift in Sources */,
 				5405A8AB26A146A5000EBD32 /* RealmCRUDModel.swift in Sources */,
 			);

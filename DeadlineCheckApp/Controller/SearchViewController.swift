@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
+    let navigationButton = NavigationButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,14 @@ class SearchViewController: UIViewController {
        
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
+        
+        
+    }
     
     @IBAction func search(_ sender: Any) {
         

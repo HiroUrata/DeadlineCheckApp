@@ -20,6 +20,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     let calendarModel = CalendarModel()
     let realmCRUDModel = RealmCRUDModel()
     let getDateModel = GetDateModel()
+    let navigationButton = NavigationButton()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +29,18 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.calendarModel.fsClendar.dataSource = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         self.getDateModel.todayGetDate()
         print(self.getDateModel.todayDate)
         
         //self.realmCRUDModel.filterDayReadRealm(selectDay: self.getDateModel.todayDate, targetView: self)
         
     }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    
+        self.navigationController?.isNavigationBarHidden = false
         
         self.tableView.layer.cornerRadius = 20.0
         
@@ -58,6 +61,8 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.tableView.reloadData()
         
     }
+    
+    
     
 }
 
