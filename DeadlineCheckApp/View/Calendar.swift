@@ -9,10 +9,20 @@ import Foundation
 import FSCalendar
 import CalculateCalendarLogic
 
-class Calendar:UIViewController{
+class CalendarModel:UIViewController{
     
     
     let fsClendar = FSCalendar()
+    
+    fileprivate let gregorian:Calendar  = Calendar(identifier: .gregorian)
+    
+    fileprivate lazy var dateFormatter:DateFormatter = {
+       
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        return formatter
+    }()
     
     
     func createCalendar(targetView:UIView){
@@ -26,8 +36,43 @@ class Calendar:UIViewController{
     
 }
 
-extension Calendar{
+extension CalendarModel{
+
+    //祝日なのか調べる
+    func judgePublicHoliday(date:Date) -> Bool {
+        
+        let judgeCalendar = Calendar(identifier: .gregorian)
+        let year = judgeCalendar.component(.year, from: date)
+        let month = judgeCalendar.component(.month, from: date)
+        let day = judgeCalendar.component(.day, from: date)
+        
+        let calculateCalendarLogic = CalculateCalendarLogic()
+        
+        return calculateCalendarLogic.judgeJapaneseHoliday(year: year, month: month, day: day)
+        
+    }
     
+    
+    func getYMDInt(date:Date) -> (Int,Int,Int){
+        
+        let judgeCalendar = Calendar(identifier: .gregorian)
+        let year = judgeCalendar.component(.year, from: date)
+        let month = judgeCalendar.component(.month, from: date)
+        let day = judgeCalendar.component(.day, from: date)
+        
+        return (year,month,day)
+        
+    }
+    
+    
+    func getWeek(date:Date) -> Int {
+        
+        let judgeCalendar = Calendar(identifier: .gregorian)
+        
+        return judgeCalendar.component(.weekday, from: date)
+        
+    }
     
     
 }
+

@@ -10,23 +10,22 @@ import FSCalendar
 import CalculateCalendarLogic
 
 
-class ViewController: UIViewController{
+class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
     
 
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     
-    let calendar = Calendar()
+    let calendarModel = CalendarModel()
     let realmCRUDModel = RealmCRUDModel()
     let getDateModel = GetDateModel()
- 
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calendar.fsClendar.delegate = self
-        self.calendar.fsClendar.dataSource = self
+        self.calendarModel.fsClendar.delegate = self
+        self.calendarModel.fsClendar.dataSource = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -54,14 +53,13 @@ class ViewController: UIViewController{
         self.calendarView.layer.shadowOpacity = 0.5
         self.calendarView.layer.shadowRadius = 7
         
-        self.calendar.createCalendar(targetView: self.calendarView)
+        self.calendarModel.createCalendar(targetView: self.calendarView)
         
         self.tableView.reloadData()
         
     }
     
 }
-
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
@@ -79,7 +77,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 115
+    return 115
         
     }
     
@@ -93,13 +91,13 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let cellProductLabel = cell.contentView.viewWithTag(1) as! UILabel
-        let cellJANLabel = cell.contentView.viewWithTag(2) as! UILabel
-        let cellDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
+//        let cellProductLabel = cell.contentView.viewWithTag(1) as! UILabel
+//        let cellJANLabel = cell.contentView.viewWithTag(2) as! UILabel
+//        let cellDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
 
-        cellProductLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmProductName"]
-        cellJANLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmJANCode"]
-        cellDeadlineLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmDeadlineDay"]
+//        cellProductLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmProductName"]
+//        cellJANLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmJANCode"]
+//        cellDeadlineLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmDeadlineDay"]
 
         cell.layer.cornerRadius = 20.0
 
@@ -109,6 +107,28 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
 }
 
 
-extension ViewController:FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
+extension ViewController{
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        
+        if calendarModel.judgePublicHoliday(date: date){
+            
+            return UIColor.red
+            
+        }
+        
+        if calendarModel.getWeek(date: date) == 1 {
+            
+            return UIColor.red
+            
+        }else if calendarModel.getWeek(date: date) == 7{
+            
+            return UIColor.blue
+            
+        }
+        
+        return nil
+    }
     
 }
+
