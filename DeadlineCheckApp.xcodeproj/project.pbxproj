@@ -20,8 +20,6 @@
 		5405A8B126A147AD000EBD32 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B026A147AD000EBD32 /* Calendar.swift */; };
 		5405A8B726A1664B000EBD32 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B626A1664B000EBD32 /* Alert.swift */; };
 		5405A8B926A191E1000EBD32 /* GetDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5405A8B826A191E1000EBD32 /* GetDateModel.swift */; };
-		54A042F726ABBF4E00CF4B20 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A042F626ABBF4E00CF4B20 /* NavigationButton.swift */; };
-		54A042FF26ABD08700CF4B20 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A042FE26ABD08700CF4B20 /* TabBarController.swift */; };
 		54A0430126AC089500CF4B20 /* HalfView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A0430026AC089500CF4B20 /* HalfView.xib */; };
 		54A0430326AC08A100CF4B20 /* HalfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0430226AC08A100CF4B20 /* HalfView.swift */; };
 		54A0430526AC08B200CF4B20 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0430426AC08B200CF4B20 /* PresentationModel.swift */; };
@@ -44,8 +42,6 @@
 		5405A8B026A147AD000EBD32 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		5405A8B626A1664B000EBD32 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5405A8B826A191E1000EBD32 /* GetDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDateModel.swift; sourceTree = "<group>"; };
-		54A042F626ABBF4E00CF4B20 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
-		54A042FE26ABD08700CF4B20 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		54A0430026AC089500CF4B20 /* HalfView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HalfView.xib; sourceTree = "<group>"; };
 		54A0430226AC08A100CF4B20 /* HalfView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfView.swift; sourceTree = "<group>"; };
 		54A0430426AC08B200CF4B20 /* PresentationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
@@ -118,7 +114,6 @@
 		5405A8A326A132E7000EBD32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				54A042FE26ABD08700CF4B20 /* TabBarController.swift */,
 				5405A89326A1256C000EBD32 /* ViewController.swift */,
 				5405A8A626A13E3B000EBD32 /* SearchViewController.swift */,
 				5405A8AC26A146C5000EBD32 /* TodayListViewController.swift */,
@@ -136,7 +131,6 @@
 				54A0430426AC08B200CF4B20 /* PresentationModel.swift */,
 				5405A8B026A147AD000EBD32 /* Calendar.swift */,
 				5405A8B626A1664B000EBD32 /* Alert.swift */,
-				54A042F626ABBF4E00CF4B20 /* NavigationButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,9 +269,7 @@
 				5405A8A926A1457F000EBD32 /* RealmDataSets.swift in Sources */,
 				5405A8B926A191E1000EBD32 /* GetDateModel.swift in Sources */,
 				54A0430326AC08A100CF4B20 /* HalfView.swift in Sources */,
-				54A042F726ABBF4E00CF4B20 /* NavigationButton.swift in Sources */,
 				5405A8A726A13E3B000EBD32 /* SearchViewController.swift in Sources */,
-				54A042FF26ABD08700CF4B20 /* TabBarController.swift in Sources */,
 				5405A89226A1256C000EBD32 /* SceneDelegate.swift in Sources */,
 				5405A8AB26A146A5000EBD32 /* RealmCRUDModel.swift in Sources */,
 			);

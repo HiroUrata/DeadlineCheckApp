@@ -14,7 +14,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
-    let navigationButton = NavigationButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,8 +20,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     let calendarModel = CalendarModel()
     let realmCRUDModel = RealmCRUDModel()
     let getDateModel = GetDateModel()
-    let navigationButton = NavigationButton()
+    let alert = Alert()
         
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -135,5 +136,14 @@ extension ViewController{
         return nil
     }
     
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        
+        alert.showTextFieldAlert(targetView: self)
+    
+    
+     }
+    
+    
 }
-
