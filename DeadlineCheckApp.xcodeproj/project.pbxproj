@@ -23,6 +23,7 @@
 		54A0430126AC089500CF4B20 /* HalfView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A0430026AC089500CF4B20 /* HalfView.xib */; };
 		54A0430326AC08A100CF4B20 /* HalfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0430226AC08A100CF4B20 /* HalfView.swift */; };
 		54A0430526AC08B200CF4B20 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0430426AC08B200CF4B20 /* PresentationModel.swift */; };
+		54C6D04926B28B130050FDAD /* SegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6D04826B28B130050FDAD /* SegmentControl.swift */; };
 		AD21A8F9F0D943983368133F /* Pods_DeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CD39FBDF06CE4D3C495709 /* Pods_DeadlineCheckApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		54A0430026AC089500CF4B20 /* HalfView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HalfView.xib; sourceTree = "<group>"; };
 		54A0430226AC08A100CF4B20 /* HalfView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfView.swift; sourceTree = "<group>"; };
 		54A0430426AC08B200CF4B20 /* PresentationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
+		54C6D04826B28B130050FDAD /* SegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControl.swift; sourceTree = "<group>"; };
 		63CD39FBDF06CE4D3C495709 /* Pods_DeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		857EEA8CA381331562F2FCD3 /* Pods-DeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
 		EC872CD07BAF7F81C9D8C40C /* Pods-DeadlineCheckApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeadlineCheckApp.debug.xcconfig"; path = "Target Support Files/Pods-DeadlineCheckApp/Pods-DeadlineCheckApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				54A0430426AC08B200CF4B20 /* PresentationModel.swift */,
 				5405A8B026A147AD000EBD32 /* Calendar.swift */,
 				5405A8B626A1664B000EBD32 /* Alert.swift */,
+				54C6D04826B28B130050FDAD /* SegmentControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				5405A8B926A191E1000EBD32 /* GetDateModel.swift in Sources */,
 				54A0430326AC08A100CF4B20 /* HalfView.swift in Sources */,
 				5405A8A726A13E3B000EBD32 /* SearchViewController.swift in Sources */,
+				54C6D04926B28B130050FDAD /* SegmentControl.swift in Sources */,
 				5405A89226A1256C000EBD32 /* SceneDelegate.swift in Sources */,
 				5405A8AB26A146A5000EBD32 /* RealmCRUDModel.swift in Sources */,
 			);

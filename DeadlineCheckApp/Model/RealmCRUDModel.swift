@@ -15,6 +15,7 @@ class RealmCRUDModel{
     
     var selectDayReadRealmArray:[[String:String]] = []
     var filterReadRealmArray:[[String:String]] = []
+    var realmTagArray = [String]()
     
 }
 
@@ -44,6 +45,32 @@ extension RealmCRUDModel{
             
         }
         
+    }
+    
+}
+
+extension RealmCRUDModel{ //segmentのtitleと検索時に使用
+    
+    func readRealmTag(){
+        
+        do{
+            let realm = try Realm()
+            realmTagArray = []
+            
+            for readRealmTag in realm.objects(RealmDataSets.self){
+                
+                if realmTagArray.allSatisfy({$0 != readRealmTag.tag}) == true{
+                    
+                    realmTagArray.append(readRealmTag.tag)
+                    
+                }
+               
+            }
+            
+        }catch{
+            
+            
+        }
     }
     
 }

@@ -19,7 +19,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
     
     let calendarModel = CalendarModel()
     let realmCRUDModel = RealmCRUDModel()
-    let getDateModel = GetDateModel()
     let alert = Alert()
         
     
@@ -31,10 +30,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.getDateModel.todayGetDate()
-        print(self.getDateModel.todayDate)
-        
-        //self.realmCRUDModel.filterDayReadRealm(selectDay: self.getDateModel.todayDate, targetView: self)
         
     }
     

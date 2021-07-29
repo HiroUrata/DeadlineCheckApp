@@ -42,6 +42,7 @@ class HalfView:UIViewController{
        override func viewDidLayoutSubviews() {
         
            if !hasSetPointOrigin {
+            
                hasSetPointOrigin = true
                pointOrigin = self.view.frame.origin
             
