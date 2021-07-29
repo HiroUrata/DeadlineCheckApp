@@ -17,7 +17,7 @@ class PresentationController: UIPresentationController {
     
     
   override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
-      let blurEffect = UIBlurEffect(style: .dark)
+    let blurEffect = UIBlurEffect(style: .dark) //UIBlurの明るさを変えられる
       blurEffectView = UIVisualEffectView(effect: blurEffect)
       super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
       tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissController))
@@ -29,7 +29,7 @@ class PresentationController: UIPresentationController {
     
     
   override var frameOfPresentedViewInContainerView: CGRect {  //数字の変更で持ち上げる高さを変えられる
-    CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.4),
+    CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.1),
              size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height *
               0.6))
   }

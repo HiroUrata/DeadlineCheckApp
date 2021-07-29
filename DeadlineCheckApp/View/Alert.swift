@@ -27,7 +27,7 @@ extension Alert{
     
     
     
-    func showTextFieldAlert(targetView:UIViewController){
+    func showTextFieldAlert(whereCell:Int,targetView:UIViewController){
         
         let realmCRUDModel = RealmCRUDModel()
         
@@ -70,8 +70,8 @@ extension Alert{
         
         alert.addAction(UIAlertAction(title: "追加", style: .default, handler: { _ in
 
-            //realmCRUDModel.updateRealm(updateProductName: <#T##String#>, updateJANCode: <#T##String#>, updateDeadlineDay: <#T##String#>, selectCell: <#T##Int#>, targetView: <#T##UIViewController#>)
-
+            realmCRUDModel.updateRealm(updateProductName: (productNameTextField?.text)!, updateJANCode: (janCodeTextField?.text)!, updateDeadlineDay: (deadlineDayTextField?.text)!, updateTag: (tagTextField?.text)!, selectCell: whereCell, targetView: targetView)
+            
          }))
 
         targetView.present(alert, animated: true, completion: nil)

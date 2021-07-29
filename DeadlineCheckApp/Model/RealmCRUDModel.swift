@@ -21,7 +21,7 @@ class RealmCRUDModel{
 
 extension RealmCRUDModel{
     
-    func createRealm(createProductName:String,createJANCode:String,createDeadlineDay:String,createTag:String){
+    func createRealm(createProductName:String,createJANCode:String,createDeadlineDay:String,createTag:String,targetView:UIViewController){
         
         do{
             let realm = try Realm()
@@ -40,7 +40,7 @@ extension RealmCRUDModel{
             
         }catch{
             
-//            self.alert.createAlert(messageContents: "保存", alertTargetView: targetView)
+            self.alert.createAlert(messageContents: "保存", alertTargetView: targetView)
             
         }
         

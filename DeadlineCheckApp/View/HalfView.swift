@@ -77,9 +77,9 @@ class HalfView:UIViewController{
     
     @IBAction func signUp(_ sender: Any) {
         
-        if (productNameTextField.text?.isEmpty) != true{
+        if (productNameTextField.text!.isEmpty && janCodeTextField.text!.isEmpty && deadlineDayTextField.text!.isEmpty && tagTextField.text!.isEmpty) != true{
             
-            
+            realmCRUDModel.createRealm(createProductName: productNameTextField.text!, createJANCode: janCodeTextField.text!, createDeadlineDay: deadlineDayTextField.text!, createTag: tagTextField.text!, targetView: self)
             
         }
         
