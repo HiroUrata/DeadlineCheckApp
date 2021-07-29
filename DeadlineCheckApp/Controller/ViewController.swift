@@ -30,6 +30,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.calendarModel.fsClendar.dataSource = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         self.getDateModel.todayGetDate()
         print(self.getDateModel.todayDate)
         
@@ -140,10 +141,22 @@ extension ViewController{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         
-        alert.showTextFieldAlert(targetView: self)
+        //alert.showTextFieldAlert(targetView: self)
+        let slideVC = HalfView()
+        slideVC.modalPresentationStyle = .custom
+        slideVC.transitioningDelegate = self
+        self.present(slideVC, animated: true, completion: nil)
+        print("!!!!!!!!動いたよ!!!!!!!part1")
     
     
      }
     
     
+}
+
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
+    }
 }

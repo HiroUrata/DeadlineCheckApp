@@ -209,59 +209,35 @@ extension RealmCRUDModel{
 
 extension RealmCRUDModel{
     
-    func updateRealm(updateProductName:String,updateJANCode:String,updateDeadlineDay:String,selectCell:Int,targetView:UIViewController){
+    func updateRealm(updateProductName:String,updateJANCode:String,updateDeadlineDay:String,updateTag:String,selectCell:Int,targetView:UIViewController){
         
         do{
             let realm = try Realm()
             let readResultRealm = realm.objects(RealmDataSets.self)
+            let updateRealmArray = [updateProductName,updateJANCode,updateDeadlineDay,updateTag]
+            
+            var realmDatasArray = [readResultRealm[selectCell].productName,
+                                   readResultRealm[selectCell].janCode,
+                                   readResultRealm[selectCell].deadlineDay,
+                                   readResultRealm[selectCell].tag]
+            
             
             try realm.write({
+                
+                for updateContentsCount in 0...updateRealmArray.count - 1{
+                    
+                updateRealmArray.forEach({
             
-                if (updateProductName.isEmpty && updateJANCode.isEmpty && updateDeadlineDay.isEmpty) != true{
-                    
-                    readResultRealm[selectCell].productName = updateProductName
-                    readResultRealm[selectCell].janCode = updateJANCode
-                    readResultRealm[selectCell].deadlineDay = updateDeadlineDay
-                                       
-                }else if (updateProductName.isEmpty && updateJANCode.isEmpty) != true && updateDeadlineDay.isEmpty == true{
-                    
-                    readResultRealm[selectCell].productName = updateProductName
-                    readResultRealm[selectCell].janCode = updateJANCode
-                                       
-                }else if (updateProductName.isEmpty && updateDeadlineDay.isEmpty) != true && updateJANCode.isEmpty == true{
-                    
-                    readResultRealm[selectCell].productName = updateProductName
-                    readResultRealm[selectCell].deadlineDay = updateDeadlineDay
-                    
-                }else if (updateJANCode.isEmpty && updateDeadlineDay.isEmpty) != true && updateProductName.isEmpty == true{
-                    
-                    readResultRealm[selectCell].janCode = updateJANCode
-                    readResultRealm[selectCell].deadlineDay = updateDeadlineDay
-                                                           
-                }else if (updateProductName.isEmpty && updateJANCode.isEmpty) == true && updateDeadlineDay.isEmpty != true{
-                    
-                    readResultRealm[selectCell].deadlineDay = updateDeadlineDay
-                                        
-                }else if (updateProductName.isEmpty && updateDeadlineDay.isEmpty) == true && updateJANCode.isEmpty != true{
-                    
-                    readResultRealm[selectCell].janCode = updateJANCode
-                    
-                }else if (updateJANCode.isEmpty && updateDeadlineDay.isEmpty) == true && updateProductName.isEmpty != true{
-                    
-                    readResultRealm[selectCell].productName = updateProductName
-                    
-                }else if (updateProductName.isEmpty && updateJANCode.isEmpty && updateDeadlineDay.isEmpty) == true{
-                    
-                    self.alert.createAlert(messageContents: "更新", alertTargetView: targetView)
-                    
-                }else{
-                    
-                    self.alert.createAlert(messageContents: "更新", alertTargetView: targetView)
-                    
-                }
+                    if $0 == updateRealmArray[updateContentsCount] && $0.count >= 1{
+                        
+                        realmDatasArray[updateContentsCount] = $0
+                        
+                       }
+                   
+                })}
                 
             })
-            
+     
         }catch{
             
             self.alert.createAlert(messageContents: "更新", alertTargetView: targetView)

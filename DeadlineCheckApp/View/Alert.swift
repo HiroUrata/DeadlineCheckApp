@@ -34,6 +34,7 @@ extension Alert{
         var productNameTextField:UITextField?
         var janCodeTextField:UITextField?
         var deadlineDayTextField:UITextField?
+        var tagTextField:UITextField?
 
         let alert = UIAlertController(title: "データを追加", message:"データを追加する場合は、値を入力して下さい", preferredStyle: .alert)
 
@@ -57,12 +58,19 @@ extension Alert{
             deadlineDayTextField = alertDeadlineDayTextField
 
         }
+        
+        alert.addTextField { (alertTagTextField:UITextField) in
+
+            alertTagTextField.placeholder = "商品の分類 例:食品"
+            tagTextField = alertTagTextField
+
+        }
          
         alert.addAction(UIAlertAction(title: "キャンセル", style: .default, handler: nil))
         
         alert.addAction(UIAlertAction(title: "追加", style: .default, handler: { _ in
 
-            realmCRUDModel.createRealm(createProductName: (productNameTextField?.text)!, createJANCode: (janCodeTextField?.text)!, createDeadlineDay: (deadlineDayTextField?.text)!)
+            //realmCRUDModel.updateRealm(updateProductName: <#T##String#>, updateJANCode: <#T##String#>, updateDeadlineDay: <#T##String#>, selectCell: <#T##Int#>, targetView: <#T##UIViewController#>)
 
          }))
 

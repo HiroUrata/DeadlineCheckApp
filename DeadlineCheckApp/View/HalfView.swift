@@ -33,6 +33,9 @@ class HalfView:UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        signUpButton.layer.cornerRadius = 20.0
+        signUpButton.layer.borderColor = UIColor.white.cgColor
+        signUpButton.layer.borderWidth = 1.0
        
     }
        
