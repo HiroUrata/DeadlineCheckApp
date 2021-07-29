@@ -14,5 +14,6 @@ class RealmDataSets:Object{
     @objc dynamic var productName = String()
     @objc dynamic var janCode = String()
     @objc dynamic var deadlineDay = String()
+    @objc dynamic var tag = String()
     
 }

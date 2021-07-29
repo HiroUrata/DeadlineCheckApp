@@ -11,7 +11,13 @@ import UIKit
 
 class HalfView:UIViewController{
     
+    @IBOutlet weak var productNameTextField: UITextField!
+    @IBOutlet weak var janCodeTextField: UITextField!
+    @IBOutlet weak var deadlineDayTextField: UITextField!
+    @IBOutlet weak var tagTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
     
+    let realmCRUDModel = RealmCRUDModel()
     
     var hasSetPointOrigin = false
        var pointOrigin: CGPoint?
@@ -31,9 +37,11 @@ class HalfView:UIViewController{
     }
        
        override func viewDidLayoutSubviews() {
+        
            if !hasSetPointOrigin {
                hasSetPointOrigin = true
                pointOrigin = self.view.frame.origin
+            
            }
        }
     
@@ -42,24 +50,38 @@ class HalfView:UIViewController{
         
            let translation = sender.translation(in: view)
            
-           // Not allowing the user to drag the view upward
            guard translation.y >= 0 else { return }
            
-           // setting x as 0 because we don't want users to move the frame side ways!! Only want straight up or down
            view.frame.origin = CGPoint(x: 0, y: self.pointOrigin!.y + translation.y)
            
            if sender.state == .ended {
+            
                let dragVelocity = sender.velocity(in: view)
                if dragVelocity.y >= 1300 {
+                
                    self.dismiss(animated: true, completion: nil)
+                
                } else {
-                   // Set back to original position of the view controller
+                  
                    UIView.animate(withDuration: 0.3) {
+                    
                        self.view.frame.origin = self.pointOrigin ?? CGPoint(x: 0, y: 400)
+                    
                    }
                }
            }
        }
     
+    @IBAction func signUp(_ sender: Any) {
+        
+        if (productNameTextField.text?.isEmpty) != true{
+            
+            
+            
+        }
+        
+        
+        
+    }
     
 }

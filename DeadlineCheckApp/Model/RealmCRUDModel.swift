@@ -21,7 +21,7 @@ class RealmCRUDModel{
 
 extension RealmCRUDModel{
     
-    func createRealm(createProductName:String,createJANCode:String,createDeadlineDay:String){
+    func createRealm(createProductName:String,createJANCode:String,createDeadlineDay:String,createTag:String){
         
         do{
             let realm = try Realm()
@@ -30,6 +30,7 @@ extension RealmCRUDModel{
             realmDataSets.productName = createProductName
             realmDataSets.janCode = createJANCode
             realmDataSets.deadlineDay = createDeadlineDay
+            realmDataSets.tag = createTag
             
             try realm.write({
                 
@@ -50,6 +51,34 @@ extension RealmCRUDModel{
 
 extension RealmCRUDModel{
     
+    func filterTagReadRealm(selectTag:String){
+        
+        do{
+            let realm = try Realm()
+            self.selectDayReadRealmArray = []
+            
+            for readRealm in realm.objects(RealmDataSets.self).filter("tag == selectTag"){
+                
+                self.selectDayReadRealmArray.append(["RealmProductName":readRealm.productName,
+                                                     "RealmJANCode":readRealm.janCode,
+                                                     "RealmDeadlineDay":readRealm.deadlineDay])
+                
+            }
+            
+            
+        }catch{
+            
+            
+            
+        }
+        
+    }
+    
+}
+
+
+extension RealmCRUDModel{
+    
     func filterDayReadRealm(selectDay:String,targetView:UIViewController){
         
         do{
@@ -59,8 +88,8 @@ extension RealmCRUDModel{
             for readRealm in realm.objects(RealmDataSets.self).filter("deadlineDay == selectDay"){
                 
                 self.selectDayReadRealmArray.append(["RealmProductName":readRealm.productName,
-                                            "RealmJANCode":readRealm.janCode,
-                                            "RealmDeadlineDay":readRealm.deadlineDay])
+                                                     "RealmJANCode":readRealm.janCode,
+                                                     "RealmDeadlineDay":readRealm.deadlineDay])
                 
             }
             

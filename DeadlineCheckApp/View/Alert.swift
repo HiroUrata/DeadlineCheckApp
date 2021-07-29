@@ -53,7 +53,7 @@ extension Alert{
         
         alert.addTextField { (alertDeadlineDayTextField:UITextField) in
 
-            alertDeadlineDayTextField.placeholder = "期限 例:2021年01月01日"
+            alertDeadlineDayTextField.placeholder = "期限 例:2021年1月1日" 
             deadlineDayTextField = alertDeadlineDayTextField
 
         }
