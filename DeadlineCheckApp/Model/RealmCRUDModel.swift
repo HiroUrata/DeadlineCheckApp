@@ -14,7 +14,9 @@ class RealmCRUDModel{
     let alert = Alert()
     
     var selectDayReadRealmArray:[[String:String]] = []
+    var filterTagReadResultArray:[[String:String]] = []
     var filterReadRealmArray:[[String:String]] = []
+    var filterTodayReadRealmArray:[[String:String]] = []
     var realmTagArray = [String]()
     
 }
@@ -82,25 +84,21 @@ extension RealmCRUDModel{
         
         do{
             let realm = try Realm()
-            self.selectDayReadRealmArray = []
+            self.filterTagReadResultArray = []
             
             for readRealm in realm.objects(RealmDataSets.self).filter("tag == selectTag"){
                 
-                self.selectDayReadRealmArray.append(["RealmProductName":readRealm.productName,
+                self.filterTagReadResultArray.append(["RealmProductName":readRealm.productName,
                                                      "RealmJANCode":readRealm.janCode,
                                                      "RealmDeadlineDay":readRealm.deadlineDay])
                 
             }
             
-            
         }catch{
             
             
-            
         }
-        
     }
-    
 }
 
 
@@ -110,17 +108,16 @@ extension RealmCRUDModel{
         
         do{
             let realm = try Realm()
-            self.selectDayReadRealmArray = []
+            self.filterTodayReadRealmArray = []
             
-            for readRealm in realm.objects(RealmDataSets.self).filter("deadlineDay == selectDay"){
-                
-                self.selectDayReadRealmArray.append(["RealmProductName":readRealm.productName,
-                                                     "RealmJANCode":readRealm.janCode,
-                                                     "RealmDeadlineDay":readRealm.deadlineDay])
-                
+            for readRealm in realm.objects(RealmDataSets.self).filter("deadlineDay == '\(selectDay)'"){
+                                
+                self.filterTodayReadRealmArray.append(["RealmProductName":readRealm.productName,
+                                                       "RealmJANCode":readRealm.janCode,
+                                                       "RealmDeadlineDay":readRealm.deadlineDay])
+                    
             }
-            
-            
+    
         }catch{
             
             self.alert.createAlert(messageContents: "読み込み", alertTargetView: targetView)
@@ -130,7 +127,6 @@ extension RealmCRUDModel{
     }
     
 }
-
 
 
 extension RealmCRUDModel{
@@ -260,7 +256,7 @@ extension RealmCRUDModel{
                         realmDatasArray[updateContentsCount] = $0
                         
                        }
-                   
+                    
                 })}
                 
             })

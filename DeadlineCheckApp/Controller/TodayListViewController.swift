@@ -31,7 +31,7 @@ class TodayListViewController: UIViewController {
         self.getDateModel.todayGetDate()
         print(self.getDateModel.todayDate)
         segmentedControl.createSegment(targetView: self.view)
-        //realmCRUDModel.filterDayReadRealm(selectDay: getDateModel.todayDate, targetView: self)
+        realmCRUDModel.filterDayReadRealm(selectDay: getDateModel.todayDate, targetView: self)
     }
     
 
@@ -49,9 +49,10 @@ extension TodayListViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return realmCRUDModel.filterTodayReadRealmArray.count
         
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
