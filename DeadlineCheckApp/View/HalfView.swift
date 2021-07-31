@@ -20,7 +20,8 @@ class HalfView:UIViewController{
     let realmCRUDModel = RealmCRUDModel()
     
     var hasSetPointOrigin = false
-       var pointOrigin: CGPoint?
+    var pointOrigin: CGPoint?
+    var getSelectDay = String()
        
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -80,7 +81,9 @@ class HalfView:UIViewController{
         
         if (productNameTextField.text!.isEmpty && janCodeTextField.text!.isEmpty && deadlineDayTextField.text!.isEmpty && tagTextField.text!.isEmpty) != true{
             
-            realmCRUDModel.createRealm(createProductName: productNameTextField.text!, createJANCode: janCodeTextField.text!, createDeadlineDay: deadlineDayTextField.text!, createTag: tagTextField.text!, targetView: self)
+            realmCRUDModel.createRealm(createProductName: productNameTextField.text!, createJANCode: janCodeTextField.text!, createDeadlineDay: deadlineDayTextField.text!, createSignUpDay: getSelectDay, createTag: tagTextField.text!, targetView: self)
+            
+            realmCRUDModel.filterDayReadRealm(selectDay: getSelectDay, targetView: self)
             
         }
         

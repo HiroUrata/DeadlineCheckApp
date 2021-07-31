@@ -58,10 +58,13 @@ extension TodayListViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-//        let cellTodayProductLabel = cell.contentView.viewWithTag(1) as! UILabel
-//        let cellTodayJANLabel = cell.contentView.viewWithTag(2) as! UILabel
-//        let cellTodayDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
-
+        let cellTodayProductLabel = cell.contentView.viewWithTag(1) as! UILabel
+        let cellTodayJANLabel = cell.contentView.viewWithTag(2) as! UILabel
+        let cellTodayDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
+        
+        cellTodayProductLabel.text = realmCRUDModel.filterTodayReadRealmArray[indexPath.row]["RealmProductName"]
+        cellTodayJANLabel.text = realmCRUDModel.filterTodayReadRealmArray[indexPath.row]["RealmJANCode"]
+        cellTodayDeadlineLabel.text = realmCRUDModel.filterTodayReadRealmArray[indexPath.row]["RealmDeadlineDay"]
         
         cell.layer.cornerRadius = 20.0
 

@@ -17,6 +17,7 @@ class RealmCRUDModel{
     var filterTagReadResultArray:[[String:String]] = []
     var filterReadRealmArray:[[String:String]] = []
     var filterTodayReadRealmArray:[[String:String]] = []
+    var filterSignUpDayReadArray:[[String:String]] = []
     var realmTagArray = [String]()
     
 }
@@ -24,7 +25,7 @@ class RealmCRUDModel{
 
 extension RealmCRUDModel{
     
-    func createRealm(createProductName:String,createJANCode:String,createDeadlineDay:String,createTag:String,targetView:UIViewController){
+    func createRealm(createProductName:String,createJANCode:String,createDeadlineDay:String,createSignUpDay:String,createTag:String,targetView:UIViewController){
         
         do{
             let realm = try Realm()
@@ -118,6 +119,34 @@ extension RealmCRUDModel{
                     
             }
     
+        }catch{
+            
+            self.alert.createAlert(messageContents: "読み込み", alertTargetView: targetView)
+            
+        }
+        
+    }
+    
+}
+
+
+extension RealmCRUDModel{
+    
+    func filterSignUpDayReadRealm(SignUpDay:String,targetView:UIViewController){
+        
+        do{
+            let realm = try Realm()
+            self.filterSignUpDayReadArray = []
+            
+            for readRealm in realm.objects(RealmDataSets.self).filter("signUpDay == '\(SignUpDay)'"){
+                
+                self.filterSignUpDayReadArray.append(["filterRealmProductName":readRealm.productName,
+                                                      "filterRealmJANCode":readRealm.janCode,
+                                                      "filterRealmDeadlineDay":readRealm.deadlineDay])
+                
+            }
+            
+            
         }catch{
             
             self.alert.createAlert(messageContents: "読み込み", alertTargetView: targetView)
