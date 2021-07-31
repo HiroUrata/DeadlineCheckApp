@@ -24,7 +24,7 @@ extension SegmentedControl{
         
         uiSegmentControl.removeAllSegments()
         
-        if realmCRUDModel.filterTagReadResultArray.count != 0{
+        if realmCRUDModel.realmTagArray.count != 0{
         
            for segmentCount in 0...realmCRUDModel.realmTagArray.count - 1{
          

@@ -15,6 +15,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewOnView: UIView!
     
     
     let calendarModel = CalendarModel()
@@ -39,16 +40,15 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
         self.navigationController?.isNavigationBarHidden = false
         
+        self.tableViewOnView.layer.cornerRadius = 20.0
+        
+        self.tableViewOnView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        self.tableViewOnView.layer.shadowOpacity = 0.5
+        self.tableViewOnView.layer.shadowRadius = 7
+        
         self.tableView.layer.cornerRadius = 20.0
         
-        self.tableView.layer.shadowOffset = CGSize(width: 10, height: 10)
-        self.tableView.layer.shadowOpacity = 0.5
-        self.tableView.layer.shadowRadius = 7
-        self.tableView.layer.masksToBounds = false
-        
-        
         self.calendarView.layer.cornerRadius = 20.0
-        
         self.calendarView.layer.shadowOffset = CGSize(width: 10, height: 10)
         self.calendarView.layer.shadowOpacity = 0.5
         self.calendarView.layer.shadowRadius = 7
@@ -59,23 +59,23 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
     }
     
-    
-    
+        
 }
+
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
-        self.tableView.layer.masksToBounds = true
-        
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        self.tableView.layer.masksToBounds = false
-        
-    }
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//
+//        self.tableView.layer.masksToBounds = true
+//
+//    }
+//
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//
+//        self.tableView.layer.masksToBounds = false
+//
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -105,7 +105,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0).cgColor
         cell.backgroundColor = .white //UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)
-
+        
         return cell
     }
     

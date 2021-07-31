@@ -7,13 +7,14 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController{
 
     @IBOutlet weak var productTextField: UITextField!
     @IBOutlet weak var janTextField: UITextField!
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
+    let realmCRUDModel = RealmCRUDModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,11 @@ class SearchViewController: UIViewController {
     
     @IBAction func search(_ sender: Any) {
         
+        realmCRUDModel.filterReadRealm(searchKeyProductName: productTextField.text!, searchKeyJANCode: janTextField.text!, searchKeyDeadlineDay: dayTextField.text!, targetView: self)
         
+       
     }
     
    
 }
+

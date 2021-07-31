@@ -128,12 +128,12 @@
 			children = (
 				5405A89526A1256C000EBD32 /* Main.storyboard */,
 				54A0430026AC089500CF4B20 /* HalfView.xib */,
-				5405A89826A1256E000EBD32 /* Assets.xcassets */,
 				54A0430226AC08A100CF4B20 /* HalfView.swift */,
 				54A0430426AC08B200CF4B20 /* PresentationModel.swift */,
 				5405A8B026A147AD000EBD32 /* Calendar.swift */,
 				5405A8B626A1664B000EBD32 /* Alert.swift */,
 				54C6D04826B28B130050FDAD /* SegmentControl.swift */,
+				5405A89826A1256E000EBD32 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -171,7 +171,7 @@ extension RealmCRUDModel{
                 
                 self.filterReadRealmArray = []
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == searchKeyProductName && janCode == searchKeyJANCode && deadlineDay == searchKeyDeadlineDay"){
+                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)' && janCode == '\(searchKeyJANCode)' && deadlineDay == '\(searchKeyDeadlineDay)'"){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
@@ -181,7 +181,7 @@ extension RealmCRUDModel{
                 
             }else if (searchKeyProductName.isEmpty && searchKeyJANCode.isEmpty) != true && searchKeyDeadlineDay.isEmpty == true{ //ProductとJANCodeが値有り
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == searchKeyProductName && janCode == searchKeyJANCode"){
+                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)' && janCode == '\(searchKeyJANCode)'"){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
@@ -191,7 +191,7 @@ extension RealmCRUDModel{
         
             }else if (searchKeyProductName.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyJANCode.isEmpty == true{  //ProductとDeadlineDayが値有り
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == searchKeyProductName && deadlineDay == searchKeyDeadlineDay"){
+                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)' && deadlineDay == '\(searchKeyDeadlineDay)'"){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
@@ -201,7 +201,7 @@ extension RealmCRUDModel{
             
             }else if (searchKeyJANCode.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyProductName.isEmpty == true{  //JANCodeとDeadlineDayが値有り
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("janCode == searchKeyJANCode && deadlineDay == searchKeyDeadlineDay"){
+                for readRealm in realm.objects(RealmDataSets.self).filter("janCode == '\(searchKeyJANCode)' && deadlineDay == '\(searchKeyDeadlineDay)'"){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
@@ -211,7 +211,7 @@ extension RealmCRUDModel{
             
             }else if (searchKeyProductName.isEmpty && searchKeyJANCode.isEmpty) == true && searchKeyDeadlineDay.isEmpty != true{ //ProductとJANCodeが値無し
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("deadlineDay == searchKeyDeadlineDay"){
+                for readRealm in realm.objects(RealmDataSets.self).filter("deadlineDay == '\(searchKeyDeadlineDay)'"){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
@@ -221,7 +221,7 @@ extension RealmCRUDModel{
                 
             }else if (searchKeyProductName.isEmpty && searchKeyDeadlineDay.isEmpty) == true && searchKeyJANCode.isEmpty != true{  //ProductとDeadlineDayが値無し
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("janCode == searchKeyJANCode"){
+                for readRealm in realm.objects(RealmDataSets.self).filter("janCode == '\(searchKeyJANCode)'"){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
@@ -231,7 +231,7 @@ extension RealmCRUDModel{
             
             }else if (searchKeyJANCode.isEmpty && searchKeyDeadlineDay.isEmpty) == true && searchKeyProductName.isEmpty != true{  //JANCodeとDeadlineDayが値無し
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == searchKeyProductName"){
+                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)'"){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,

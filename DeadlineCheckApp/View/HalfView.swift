@@ -29,6 +29,8 @@ class HalfView:UIViewController{
            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
            view.addGestureRecognizer(panGesture)
         
+        deadlineDayTextField.addTarget(self, action: #selector(addYearMonthDay), for: .allTouchEvents)
+        
            
        }
     
@@ -77,6 +79,16 @@ class HalfView:UIViewController{
                }
            }
        }
+    
+    @objc func addYearMonthDay(_ sender:UITextField){
+        
+        if sender.text == ""{
+            
+            sender.text = "年月日"
+            
+        }
+        
+    }
     
     @IBAction func signUp(_ sender: Any) {
         
