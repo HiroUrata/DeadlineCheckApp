@@ -34,7 +34,9 @@ extension RealmCRUDModel{
             realmDataSets.productName = createProductName
             realmDataSets.janCode = createJANCode
             realmDataSets.deadlineDay = createDeadlineDay
+            realmDataSets.signUpDay = createSignUpDay
             realmDataSets.tag = createTag
+            
             
             try realm.write({
                 

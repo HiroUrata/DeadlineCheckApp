@@ -25,9 +25,10 @@ class HalfView:UIViewController{
        
        override func viewDidLoad() {
            super.viewDidLoad()
+        
            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
            view.addGestureRecognizer(panGesture)
-           
+        
            
        }
     

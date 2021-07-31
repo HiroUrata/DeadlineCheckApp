@@ -24,10 +24,13 @@ extension SegmentedControl{
         
         uiSegmentControl.removeAllSegments()
         
-        for segmentCount in 0...realmCRUDModel.realmTagArray.count - 1{
+        if realmCRUDModel.filterTagReadResultArray.count != 0{
+        
+           for segmentCount in 0...realmCRUDModel.realmTagArray.count - 1{
          
-            uiSegmentControl.insertSegment(withTitle: realmCRUDModel.realmTagArray[segmentCount], at: segmentCount, animated: true)
+                uiSegmentControl.insertSegment(withTitle: realmCRUDModel.realmTagArray[segmentCount], at: segmentCount, animated: true)
             
+           }
         }
         
         uiSegmentControl.frame = CGRect(x: targetView.bounds.minX + 5, y: targetView.bounds.minY + 97, width: targetView.frame.size.width - 10, height: 32)

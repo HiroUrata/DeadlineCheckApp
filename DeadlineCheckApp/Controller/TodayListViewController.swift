@@ -67,6 +67,8 @@ extension TodayListViewController:UITableViewDelegate,UITableViewDataSource{
         cellTodayDeadlineLabel.text = realmCRUDModel.filterTodayReadRealmArray[indexPath.row]["RealmDeadlineDay"]
         
         cell.layer.cornerRadius = 20.0
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.white.cgColor
 
         return cell
     }

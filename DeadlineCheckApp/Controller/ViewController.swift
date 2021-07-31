@@ -53,9 +53,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.calendarView.layer.shadowOpacity = 0.5
         self.calendarView.layer.shadowRadius = 7
         
-        self.calendarModel.createCalendar(targetView: self.calendarView)
+        self.tableView.backgroundColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)
         
-        self.tableView.reloadData()
+        self.calendarModel.createCalendar(targetView: self.calendarView)
         
     }
     
@@ -85,7 +85,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.realmCRUDModel.selectDayReadRealmArray.count
+        return self.realmCRUDModel.filterSignUpDayReadArray.count
         
     }
     
@@ -97,11 +97,14 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         let cellJANLabel = cell.contentView.viewWithTag(2) as! UILabel
         let cellDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
 
-        cellProductLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmProductName"]
-        cellJANLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmJANCode"]
-        cellDeadlineLabel.text = self.realmCRUDModel.selectDayReadRealmArray[indexPath.row]["RealmDeadlineDay"]
+        cellProductLabel.text = self.realmCRUDModel.filterSignUpDayReadArray[indexPath.row]["filterRealmProductName"]
+        cellJANLabel.text = self.realmCRUDModel.filterSignUpDayReadArray[indexPath.row]["filterRealmJANCode"]
+        cellDeadlineLabel.text = self.realmCRUDModel.filterSignUpDayReadArray[indexPath.row]["filterRealmDeadlineDay"]
 
         cell.layer.cornerRadius = 20.0
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0).cgColor
+        cell.backgroundColor = .white //UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)
 
         return cell
     }
@@ -139,8 +142,11 @@ extension ViewController{
         let year = convertDate.component(.year, from: date)
         let month = convertDate.component(.month, from: date)
         let day = convertDate.component(.day, from: date)
+        print("\(year)年\(month)月\(day)日")
         
-        self.realmCRUDModel.filterDayReadRealm(selectDay: "\(year)年\(month)月\(day)日", targetView: self)
+        self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)年\(month)月\(day)日", targetView: self)
+        
+        self.tableView.reloadData()
         
         let slideVC = HalfView()
         slideVC.getSelectDay = "\(year)年\(month)月\(day)日"
