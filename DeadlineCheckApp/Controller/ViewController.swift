@@ -32,6 +32,16 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.tableView.dataSource = self
         
         
+        //テスト
+        let testString = "Swift大好き"
+        print(testString.prefix(5)) //左から指定した文字数分だけ表示
+        
+        let testStringTwo = "IOSアプリ開発大好き"
+        print(testStringTwo.suffix(8)) //右から指定した文字数分だけ表示
+        
+        
+        
+        
     }
     
 
@@ -65,17 +75,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
-//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//
-//        self.tableView.layer.masksToBounds = true
-//
-//    }
-//
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//
-//        self.tableView.layer.masksToBounds = false
-//
-//    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

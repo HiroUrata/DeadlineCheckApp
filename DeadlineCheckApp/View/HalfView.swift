@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class HalfView:UIViewController{
     
     @IBOutlet weak var productNameTextField: UITextField!
@@ -30,7 +29,6 @@ class HalfView:UIViewController{
            view.addGestureRecognizer(panGesture)
         
         deadlineDayTextField.addTarget(self, action: #selector(addYearMonthDay), for: .allTouchEvents)
-        
            
        }
     
