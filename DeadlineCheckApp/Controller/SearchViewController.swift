@@ -33,7 +33,11 @@ class SearchViewController: UIViewController{
     
     @IBAction func search(_ sender: Any) {
         
-        realmCRUDModel.filterReadRealm(searchKeyProductName: productTextField.text!, searchKeyJANCode: janTextField.text!, searchKeyDeadlineDay: dayTextField.text!, targetView: self)
+        //realmCRUDModel.filterReadRealm(searchKeyProductName: productTextField.text!, searchKeyJANCode: janTextField.text!, searchKeyDeadlineDay: dayTextField.text!, targetView: self)
+        
+        let srVC = storyboard?.instantiateViewController(identifier: "SRVC") as! SearchResultViewController
+        self.navigationController?.pushViewController(srVC, animated: true)
+        
         
        
     }
