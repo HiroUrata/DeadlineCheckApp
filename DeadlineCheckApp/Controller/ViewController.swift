@@ -142,14 +142,33 @@ extension ViewController{
         let year = convertDate.component(.year, from: date)
         let month = convertDate.component(.month, from: date)
         let day = convertDate.component(.day, from: date)
-        print("\(year)年\(month)月\(day)日")
         
-        self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)年\(month)月\(day)日", targetView: self)
+        if month < 10 && day < 10{
+            
+            print("\(year)/\("0" + String(month))/\("0" + String(day))")
+            
+        }else if month < 10{
+            
+            print("\(year)/\("0" + String(month))/\(day)")
+            
+        }else if day < 10{
+            
+            print("\(year)/\(month)/\("0" + String(day))")
+            
+        }else{
+            
+            print("\(year)/\(month)/\(day)")
+            
+        }
+        
+
+        
+        self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\(month)/\(day)", targetView: self)
         
         self.tableView.reloadData()
         
         let slideVC = HalfView()
-        slideVC.getSelectDay = "\(year)年\(month)月\(day)日"
+        slideVC.getSelectDay = "\(year)/\(month)/\(day)"
         slideVC.modalPresentationStyle = .custom
         slideVC.transitioningDelegate = self
         self.present(slideVC, animated: true, completion: nil)        
