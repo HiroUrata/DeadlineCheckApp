@@ -16,9 +16,11 @@ class GetDateModel{
         
         let dateformatter = DateFormatter()
         dateformatter.timeStyle = .none
-        dateformatter.dateStyle = .long
-        dateformatter.locale = Locale(identifier: "ja_JP")// 1111年
-        //self.todayDate = dateformatter.string(from: Date()).
+        dateformatter.dateStyle = .medium
+        dateformatter.locale = Locale(identifier: "ja_JP")
+        todayDate = dateformatter.string(from: Date())
+        
+        
     }
     
 }

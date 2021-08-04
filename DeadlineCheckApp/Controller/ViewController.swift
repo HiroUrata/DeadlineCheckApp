@@ -32,16 +32,6 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.tableView.dataSource = self
         
         
-        //テスト
-        let testString = "Swift大好き"
-        print(testString.prefix(5)) //左から指定した文字数分だけ表示
-        
-        let testStringTwo = "IOSアプリ開発大好き"
-        print(testStringTwo.suffix(8)) //右から指定した文字数分だけ表示
-        
-        
-        
-        
     }
     
 
@@ -139,42 +129,45 @@ extension ViewController{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         let convertDate = Calendar(identifier: .gregorian)
+          
         let year = convertDate.component(.year, from: date)
         let month = convertDate.component(.month, from: date)
         let day = convertDate.component(.day, from: date)
-        
-        if month < 10 && day < 10{
-            
-            print("\(year)/\("0" + String(month))/\("0" + String(day))")
-            
-        }else if month < 10{
-            
-            print("\(year)/\("0" + String(month))/\(day)")
-            
-        }else if day < 10{
-            
-            print("\(year)/\(month)/\("0" + String(day))")
-            
-        }else{
-            
-            print("\(year)/\(month)/\(day)")
-            
-        }
-        
 
-        
-        self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\(month)/\(day)", targetView: self)
+        let slideVC = HalfView()
+
+        if month < 10 && day < 10{
+
+            print("\(year)/\("0" + String(month))/\("0" + String(day))")
+            self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\("0" + String(month))/\("0" + String(day))", targetView: self)
+            slideVC.getSelectDay = "\(year)/\("0" + String(month))/\("0" + String(day))"
+
+        }else if month < 10{
+
+            print("\(year)/\("0" + String(month))/\(day)")
+            self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\("0" + String(month))/\(day)", targetView: self)
+            slideVC.getSelectDay = "\(year)/\("0" + String(month))/\(day)"
+
+        }else if day < 10{
+
+            print("\(year)/\(month)/\("0" + String(day))")
+            self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\("0" + String(month))/\(day)", targetView: self)
+            slideVC.getSelectDay = "\(year)/\("0" + String(month))/\(day)"
+
+        }else{
+
+            print("\(year)/\(month)/\(day)")
+            self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\(month)/\(day)", targetView: self)
+            slideVC.getSelectDay = "\(year)/\(month)/\(day)"
+        }
         
         self.tableView.reloadData()
         
-        let slideVC = HalfView()
-        slideVC.getSelectDay = "\(year)/\(month)/\(day)"
         slideVC.modalPresentationStyle = .custom
         slideVC.transitioningDelegate = self
         self.present(slideVC, animated: true, completion: nil)        
     
      }
-    
     
 }
 

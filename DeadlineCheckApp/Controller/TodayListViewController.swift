@@ -20,7 +20,10 @@ class TodayListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.getDateModel.todayGetDate()
+        print(self.getDateModel.todayDate)
+        segmentedControl.createSegment(targetView: self.view)
+        realmCRUDModel.filterDayReadRealm(selectDay: getDateModel.todayDate, targetView: self)
        
     }
     
@@ -28,10 +31,7 @@ class TodayListViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
-        self.getDateModel.todayGetDate()
-        print(self.getDateModel.todayDate)
-        segmentedControl.createSegment(targetView: self.view)
-        realmCRUDModel.filterDayReadRealm(selectDay: getDateModel.todayDate, targetView: self)
+        
     }
     
 
