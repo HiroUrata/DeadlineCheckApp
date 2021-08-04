@@ -11,6 +11,8 @@ class SearchResultViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let realmCRUDModel = RealmCRUDModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,35 +29,42 @@ class SearchResultViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
 extension SearchResultViewController:UITableViewDelegate,UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
+        
+        return 1
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        <#code#>
+        
+        return 120
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        return realmCRUDModel.filterReadRealmArray.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let cellSearchProductLabel = cell.contentView.viewWithTag(1) as! UILabel
+        let cellSearchJANLabel = cell.contentView.viewWithTag(2) as! UILabel
+        let cellSearchDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
+        
+        cellSearchProductLabel.text = realmCRUDModel.filterReadRealmArray[indexPath.row]["filterRealmProductName"]
+        cellSearchJANLabel.text = realmCRUDModel.filterReadRealmArray[indexPath.row]["filterRealmJANCode"]
+        cellSearchDeadlineLabel.text = realmCRUDModel.filterReadRealmArray[indexPath.row]["filterRealmDeadlineDay"]
+        
+        return cell
     }
  
     
