@@ -40,6 +40,9 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
         self.navigationController?.isNavigationBarHidden = false
         
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchAlert)),
+                                                   UIBarButtonItem(title: "Today", style: .done, target: self, action: #selector(showTodayList))]
+        
         self.tableViewOnView.layer.cornerRadius = 20.0
         
         self.tableViewOnView.layer.shadowOffset = CGSize(width: 10, height: 10)
@@ -59,7 +62,18 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
     }
     
+    @objc func showSearchAlert(){
         
+        
+        
+    }
+        
+    @objc func showTodayList(){
+        
+        
+        
+    }
+    
 }
 
 

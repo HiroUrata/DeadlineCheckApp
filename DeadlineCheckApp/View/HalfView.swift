@@ -56,15 +56,12 @@ class HalfView:UIViewController{
     
        @objc func panGestureRecognizerAction(sender: UIPanGestureRecognizer) {
         
-           //let translation = sender.translation(in: view)
-           
            guard sender.translation(in: view).y >= 0 else { return }
            
            view.frame.origin = CGPoint(x: 0, y: self.pointOrigin!.y + sender.translation(in: view).y)
            
            if sender.state == .ended {
             
-               //let dragVelocity = sender.velocity(in: view)
                if sender.velocity(in: view).y >= 1300 {
                 
                    self.dismiss(animated: true, completion: nil)
@@ -96,6 +93,8 @@ class HalfView:UIViewController{
     
     
     @IBAction func signUp(_ sender: Any) {
+        
+        //月と日の判定を追加する
         
         if (productNameTextField.text!.isEmpty && janCodeTextField.text!.isEmpty && deadlineDayTextField.text!.isEmpty && tagTextField.text!.isEmpty) != true{
             

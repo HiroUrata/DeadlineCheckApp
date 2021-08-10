@@ -18,8 +18,7 @@ class PresentationController: UIPresentationController {
     
   override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
     
-    let blurEffect = UIBlurEffect(style: .dark) //UIBlurの明るさを変えられる
-      blurEffectView = UIVisualEffectView(effect: blurEffect)
+      blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark)) //UIBlurの明るさを変えられる
     
       super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
       tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissController))

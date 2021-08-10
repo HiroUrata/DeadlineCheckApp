@@ -20,7 +20,6 @@ class GetDateModel{
         dateformatter.locale = Locale(identifier: "ja_JP")
         todayDate = dateformatter.string(from: Date())
         
-        
     }
     
 }

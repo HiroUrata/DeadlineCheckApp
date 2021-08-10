@@ -41,6 +41,10 @@ extension Alert{
         alert.addTextField { (alertProductNameTextField:UITextField) in
 
             alertProductNameTextField.placeholder = "商品名"
+            alertProductNameTextField.layer.borderWidth = 5.0
+            alertProductNameTextField.layer.borderColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0).cgColor
+            alertProductNameTextField.borderStyle = .roundedRect
+            alertProductNameTextField.clearButtonMode = .whileEditing
             productNameTextField = alertProductNameTextField
 
         }
@@ -48,13 +52,22 @@ extension Alert{
         alert.addTextField { (alertJANCodeTextField:UITextField) in
 
             alertJANCodeTextField.placeholder = "JANコード"
+            alertJANCodeTextField.layer.borderWidth = 1.0
+            alertJANCodeTextField.layer.borderColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0).cgColor
+            alertJANCodeTextField.borderStyle = .roundedRect
+            alertJANCodeTextField.clearButtonMode = .always
             janCodeTextField = alertJANCodeTextField
 
         }
         
         alert.addTextField { (alertDeadlineDayTextField:UITextField) in
 
-            alertDeadlineDayTextField.placeholder = "期限 例:2021年1月1日" 
+            alertDeadlineDayTextField.placeholder = "期限 例:2021/01/01"
+            alertDeadlineDayTextField.layer.borderWidth = 1.0
+            alertDeadlineDayTextField.layer.borderColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0).cgColor
+            alertDeadlineDayTextField.borderStyle = .roundedRect
+            alertDeadlineDayTextField.clearButtonMode = .always
+            alertDeadlineDayTextField.addTarget(self, action: #selector(self.addSlash), for: .allEditingEvents)
             deadlineDayTextField = alertDeadlineDayTextField
 
         }
@@ -62,6 +75,10 @@ extension Alert{
         alert.addTextField { (alertTagTextField:UITextField) in
 
             alertTagTextField.placeholder = "商品の分類 例:食品"
+            alertTagTextField.layer.borderWidth = 1.0
+            alertTagTextField.layer.borderColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0).cgColor
+            alertTagTextField.borderStyle = .roundedRect
+            alertTagTextField.clearButtonMode = .always
             tagTextField = alertTagTextField
 
         }
@@ -76,6 +93,20 @@ extension Alert{
 
         targetView.present(alert, animated: true, completion: nil)
 
+    }
+    
+    @objc func addSlash(sender:UITextField){
+        
+        if sender.text?.count == 4{
+            
+            sender.text = sender.text! + "/"
+            
+        }else if sender.text?.count == 7{
+            
+            sender.text = sender.text! + "/"
+            
+        }
+        
     }
         
 }
