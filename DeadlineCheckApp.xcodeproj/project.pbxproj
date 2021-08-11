@@ -120,11 +120,11 @@
 		5405A8A326A132E7000EBD32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				548E15C026C3CBEE000D966E /* TabBarController.swift */,
 				5405A89326A1256C000EBD32 /* ViewController.swift */,
 				5405A8A626A13E3B000EBD32 /* SearchViewController.swift */,
 				5417C43026BA9987004033AE /* SearchResultViewController.swift */,
 				5405A8AC26A146C5000EBD32 /* TodayListViewController.swift */,
-				548E15C026C3CBEE000D966E /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
