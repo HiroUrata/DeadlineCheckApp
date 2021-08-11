@@ -32,16 +32,14 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.tableView.dataSource = self
         
         
+                                                   
+        
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.isNavigationBarHidden = false
-        
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchAlert)),
-                                                   UIBarButtonItem(title: "Today", style: .done, target: self, action: #selector(showTodayList))]
         
         self.tableViewOnView.layer.cornerRadius = 20.0
         
@@ -62,17 +60,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         
     }
     
-    @objc func showSearchAlert(){
-        
-        
-        
-    }
-        
-    @objc func showTodayList(){
-        
-        
-        
-    }
+    
     
 }
 
