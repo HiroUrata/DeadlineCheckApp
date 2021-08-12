@@ -32,7 +32,7 @@ class HalfView:UIViewController{
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
         
-        deadlineDayTextField.addTarget(self, action: #selector(addYearMonthDay), for: .allEditingEvents)
+        deadlineDayTextField.addTarget(self, action: #selector(addYearMonthDay), for: .editingChanged)
            
        }
     
@@ -98,16 +98,13 @@ class HalfView:UIViewController{
             
         }else if sender.text?.count == 10{
             
-            let monthResultArray = Int((sender.text?.components(separatedBy: "/")[1])!)
-            let dayResultArray = Int((sender.text?.components(separatedBy: "/")[2])!)
             
-            
-            if monthResultArray! > 12 {
+            if Int((sender.text?.components(separatedBy: "/")[1])!)! > 12 {
                 
                 alert.warningAlert(messageContents: "月", alertTargetView: self)
                 sender.text = ""
                 
-            }else if dayResultArray! > 31{
+            }else if Int((sender.text?.components(separatedBy: "/")[2])!)! > 31{
                 
                 alert.warningAlert(messageContents: "日付", alertTargetView: self)
                 sender.text = ""
