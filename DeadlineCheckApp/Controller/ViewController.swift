@@ -30,9 +30,7 @@ class ViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,F
         self.calendarModel.fsClendar.dataSource = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        
-                                                   
+                                                
         
     }
     

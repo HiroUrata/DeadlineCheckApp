@@ -21,6 +21,8 @@ class HalfView:UIViewController{
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
     var getSelectDay = String()
+    
+    lazy var alert = Alert()
        
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -81,12 +83,36 @@ class HalfView:UIViewController{
         
         if sender.text?.count == 4{
             
+            
+            
             sender.text = sender.text! + "/"
+            
+            
+            
             
         }else if sender.text?.count == 7{
             
+            
             sender.text = sender.text! + "/"
             
+            
+        }else if sender.text?.count == 10{
+            
+            let monthResultArray = Int((sender.text?.components(separatedBy: "/")[1])!)
+            let dayResultArray = Int((sender.text?.components(separatedBy: "/")[2])!)
+            
+            
+            if monthResultArray! > 12 {
+                
+                alert.warningAlert(messageContents: "月", alertTargetView: self)
+                sender.text = ""
+                
+            }else if dayResultArray! > 31{
+                
+                alert.warningAlert(messageContents: "日付", alertTargetView: self)
+                sender.text = ""
+                
+            }
         }
         
     }

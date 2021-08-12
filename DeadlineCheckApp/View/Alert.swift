@@ -21,6 +21,15 @@ class Alert{
         
     }
     
+    func warningAlert(messageContents:String,alertTargetView:UIViewController){
+        
+        let alert = UIAlertController(title: "警告", message: "入力された\(messageContents)は存在しない可能性があります。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        alertTargetView.present(alert, animated:true, completion: nil)
+        
+    }
+    
 }
 
 extension Alert{
