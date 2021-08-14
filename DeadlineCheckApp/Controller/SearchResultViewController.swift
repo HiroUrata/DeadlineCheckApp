@@ -13,12 +13,15 @@ class SearchResultViewController: UIViewController {
     
     let realmCRUDModel = RealmCRUDModel()
     
+    var filterReadResultArray:[[String:String]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+        print(realmCRUDModel.filterReadRealmArray)
+        print(filterReadResultArray)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +51,7 @@ extension SearchResultViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return realmCRUDModel.filterReadRealmArray.count
+        return filterReadResultArray.count
         
     }
     
@@ -60,9 +63,9 @@ extension SearchResultViewController:UITableViewDelegate,UITableViewDataSource{
         let cellSearchJANLabel = cell.contentView.viewWithTag(2) as! UILabel
         let cellSearchDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
         
-        cellSearchProductLabel.text = realmCRUDModel.filterReadRealmArray[indexPath.row]["filterRealmProductName"]
-        cellSearchJANLabel.text = realmCRUDModel.filterReadRealmArray[indexPath.row]["filterRealmJANCode"]
-        cellSearchDeadlineLabel.text = realmCRUDModel.filterReadRealmArray[indexPath.row]["filterRealmDeadlineDay"]
+        cellSearchProductLabel.text = filterReadResultArray[indexPath.row]["filterRealmProductName"]
+        cellSearchJANLabel.text = filterReadResultArray[indexPath.row]["filterRealmJANCode"]
+        cellSearchDeadlineLabel.text = filterReadResultArray[indexPath.row]["filterRealmDeadlineDay"]
         
         return cell
     }
