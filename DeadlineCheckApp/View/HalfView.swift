@@ -98,6 +98,7 @@ class HalfView:UIViewController{
             
         }else if sender.text?.count == 10{
             
+            print(sender.text?.components(separatedBy: "/") as Any)
             
             if Int((sender.text?.components(separatedBy: "/")[1])!)! > 12 {
                 
@@ -117,8 +118,6 @@ class HalfView:UIViewController{
     
     @IBAction func signUp(_ sender: Any) {
         
-        //月と日の判定を追加する
-        
         if (productNameTextField.text!.isEmpty && janCodeTextField.text!.isEmpty && deadlineDayTextField.text!.isEmpty && tagTextField.text!.isEmpty) != true{
             
             realmCRUDModel.createRealm(createProductName: productNameTextField.text!, createJANCode: janCodeTextField.text!, createDeadlineDay: deadlineDayTextField.text!, createSignUpDay: getSelectDay, createTag: tagTextField.text!, targetView: self)
@@ -126,8 +125,6 @@ class HalfView:UIViewController{
             realmCRUDModel.filterDayReadRealm(selectDay: getSelectDay, targetView: self)
             
         }
-        
-        
         
     }
     
