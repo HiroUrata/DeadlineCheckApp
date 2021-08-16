@@ -26,19 +26,52 @@ class SearchViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-       
+        dayTextField.addTarget(self, action: #selector(addSlash), for: .editingChanged)
         
         
+        
+    }
+    
+    @objc func addSlash(sender:UITextField){
+        
+        if sender.text?.count == 4{
+         
+            sender.text = sender.text! + "/"
+            
+        }else if sender.text?.count == 7{
+            
+            sender.text = sender.text! + "/"
+            
+        }else if sender.text?.count == 10{
+            
+            print(sender.text?.components(separatedBy: "/") as Any)
+            
+            if Int((sender.text?.components(separatedBy: "/")[1])!)! > 12 {
+                
+                alert.warningAlert(messageContents: "月", alertTargetView: self)
+                sender.text = ""
+                
+            }else if Int((sender.text?.components(separatedBy: "/")[2])!)! > 31{
+                
+                alert.warningAlert(messageContents: "日付", alertTargetView: self)
+                sender.text = ""
+                
+            }
+        }
         
     }
     
     @IBAction func search(_ sender: Any) {
         
         realmCRUDModel.filterReadRealm(searchKeyProductName: productTextField.text!, searchKeyJANCode: janTextField.text!, searchKeyDeadlineDay: dayTextField.text!, targetView: self)
-
-        let srVC = storyboard?.instantiateViewController(identifier: "SRVC") as! SearchResultViewController
-        self.navigationController?.pushViewController(srVC, animated: true)
-        srVC.filterReadResultArray = realmCRUDModel.filterReadRealmArray
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            let srVC = self.storyboard?.instantiateViewController(identifier: "SRVC") as! SearchResultViewController
+            self.navigationController?.pushViewController(srVC, animated: true)
+            srVC.filterReadResultArray = self.realmCRUDModel.filterReadRealmArray
+            
+        }
    
        
     }

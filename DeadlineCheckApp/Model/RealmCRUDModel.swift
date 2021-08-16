@@ -21,7 +21,7 @@ class RealmCRUDModel{
     var realmTagArray = [String]()
     
 }
-
+                        
 
 extension RealmCRUDModel{
     
@@ -166,95 +166,93 @@ extension RealmCRUDModel{
         
         do{
             let realm = try Realm()
+            filterReadRealmArray = []
             
-            if (searchKeyProductName.isEmpty && searchKeyJANCode.isEmpty && searchKeyDeadlineDay.isEmpty) != true{  //全て値有り
+            switch (searchKeyProductName.isEmpty, searchKeyJANCode.isEmpty, searchKeyDeadlineDay.isEmpty){
+             
+            case (false, false, false):
                 
-                self.filterReadRealmArray = []
-                
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)' && janCode == '\(searchKeyJANCode)' && deadlineDay == '\(searchKeyDeadlineDay)'"){
+                for readRealm in realm.objects(RealmDataSets.self).filter(NSPredicate(format: "productName == %@", searchKeyProductName)).filter(NSPredicate(format: "janCode == %@", searchKeyJANCode)).filter(NSPredicate(format: "deadlineDay == %@", searchKeyDeadlineDay)){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    
+                    print("1")
                 }
                 
-            }else if (searchKeyProductName.isEmpty && searchKeyJANCode.isEmpty) != true && searchKeyDeadlineDay.isEmpty == true{ //ProductとJANCodeが値有り
+            case(false,false,true):
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)' && janCode == '\(searchKeyJANCode)'"){
+                for readRealm in realm.objects(RealmDataSets.self).filter(NSPredicate(format: "productName == %@",searchKeyProductName)).filter(NSPredicate(format: "janCode == %@", searchKeyJANCode)){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    
+                    print("2")
                 }
-        
-            }else if (searchKeyProductName.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyJANCode.isEmpty == true{  //ProductとDeadlineDayが値有り
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)' && deadlineDay == '\(searchKeyDeadlineDay)'"){
+            case(false,true,false):
+                
+                for readRealm in realm.objects(RealmDataSets.self).filter(NSPredicate(format: "productName == %@", searchKeyProductName)).filter(NSPredicate(format: "deadlineDay == %@", searchKeyDeadlineDay)){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                
+                    print("3")
                 }
-            
-            }else if (searchKeyJANCode.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyProductName.isEmpty == true{  //JANCodeとDeadlineDayが値有り
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("janCode == '\(searchKeyJANCode)' && deadlineDay == '\(searchKeyDeadlineDay)'"){
+            case(true,false,false):
+                
+                for readRealm in realm.objects(RealmDataSets.self).filter(NSPredicate(format: "janCode == %@", searchKeyJANCode)).filter(NSPredicate(format: "deadlineDay == %@", searchKeyDeadlineDay)){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                
+                    print("4")
                 }
-            
-            }else if (searchKeyProductName.isEmpty && searchKeyJANCode.isEmpty) == true && searchKeyDeadlineDay.isEmpty != true{ //ProductとJANCodeが値無し
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("deadlineDay == '\(searchKeyDeadlineDay)'"){
+            case(true,true,false):
+                
+                for readRealm in realm.objects(RealmDataSets.self).filter(NSPredicate(format: "deadlineDay == %@", searchKeyDeadlineDay)){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    
+                    print("5")
                 }
                 
-            }else if (searchKeyProductName.isEmpty && searchKeyDeadlineDay.isEmpty) == true && searchKeyJANCode.isEmpty != true{  //ProductとDeadlineDayが値無し
+            case(true,false,true):
                 
-                for readRealm in realm.objects(RealmDataSets.self).filter("janCode == '\(searchKeyJANCode)'"){
-                    
-                    self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
-                                                      "filterRealmJANCode":readRealm.janCode,
-                                                      "filterRealmDeadlineDay":readRealm.deadlineDay])
-                
-                }
-            
-            }else if (searchKeyJANCode.isEmpty && searchKeyDeadlineDay.isEmpty) == true && searchKeyProductName.isEmpty != true{  //JANCodeとDeadlineDayが値無し
-                
-                for readRealm in realm.objects(RealmDataSets.self).filter("productName == '\(searchKeyProductName)'"){
+                for readRealm in realm.objects(RealmDataSets.self).filter(NSPredicate(format: "janCode == %@", searchKeyJANCode)){
                     
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                
+                    print("6")
                 }
-            
-            }else if (searchKeyProductName.isEmpty && searchKeyJANCode.isEmpty && searchKeyDeadlineDay.isEmpty) == true{  //全て値無し
                 
-                self.alert.createAlert(messageContents: "読み込み", alertTargetView: targetView)
+            case(false,true,true):
                 
-            }else{
+                for readRealm in realm.objects(RealmDataSets.self).filter(NSPredicate(format: "productName == %@", searchKeyProductName)){
+                    
+                    self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
+                                                      "filterRealmJANCode":readRealm.janCode,
+                                                      "filterRealmDeadlineDay":readRealm.deadlineDay])
+                    print("7")
+                }
                 
+            case(true,true,true):
                 self.alert.createAlert(messageContents: "読み込み", alertTargetView: targetView)
                 
             }
-            
+
         }catch{
             
             self.alert.createAlert(messageContents: "読み込み", alertTargetView: targetView)
-            
+            print("10")
         }
         
+        print(filterReadRealmArray)
+        print("11")
     }
     
 }

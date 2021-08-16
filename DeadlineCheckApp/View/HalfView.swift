@@ -82,19 +82,12 @@ class HalfView:UIViewController{
     @objc func addYearMonthDay(_ sender:UITextField){
         
         if sender.text?.count == 4{
-            
-            
-            
+         
             sender.text = sender.text! + "/"
-            
-            
-            
             
         }else if sender.text?.count == 7{
             
-            
             sender.text = sender.text! + "/"
-            
             
         }else if sender.text?.count == 10{
             
@@ -124,6 +117,10 @@ class HalfView:UIViewController{
             
             realmCRUDModel.filterDayReadRealm(selectDay: getSelectDay, targetView: self)
             
+            productNameTextField.text = ""
+            janCodeTextField.text = ""
+            deadlineDayTextField.text = ""
+            tagTextField.text = ""
         }
         
     }

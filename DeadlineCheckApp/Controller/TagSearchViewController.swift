@@ -1,29 +1,24 @@
 //
-//  T/Users/uratahiroki/Desktop/EverydayIosApp/DeadlineCheckApp/DeadlineCheckApp/Controller/TodayListViewController.swiftodayListViewController.swift
+//  TagSearchViewController.swift
 //  DeadlineCheckApp
 //
-//  Created by UrataHiroki on 2021/07/16.
+//  Created by UrataHiroki on 2021/08/16.
 //
 
 import UIKit
 
-class TodayListViewController: UIViewController {
+class TagSearchViewController: UIViewController{
 
-    
     @IBOutlet weak var tableView: UITableView!
     
-    
     let realmCRUDModel = RealmCRUDModel()
-    let getDateModel = GetDateModel()
-    
+    let segmentedControl = SegmentedControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.getDateModel.todayGetDate()
-        print(self.getDateModel.todayDate)
-        realmCRUDModel.filterDayReadRealm(selectDay: getDateModel.todayDate, targetView: self)
-       
+        segmentedControl.createSegment(targetView: self.view)
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,12 +26,12 @@ class TodayListViewController: UIViewController {
         
         
     }
-    
+   
 
 }
 
 
-extension TodayListViewController:UITableViewDelegate,UITableViewDataSource{
+extension TagSearchViewController:UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -47,7 +42,7 @@ extension TodayListViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return realmCRUDModel.filterTodayReadRealmArray.count
+        return realmCRUDModel.filterTagReadResultArray.count
         
     }
     
@@ -60,9 +55,9 @@ extension TodayListViewController:UITableViewDelegate,UITableViewDataSource{
         let cellTodayJANLabel = cell.contentView.viewWithTag(2) as! UILabel
         let cellTodayDeadlineLabel = cell.contentView.viewWithTag(3) as! UILabel
         
-        cellTodayProductLabel.text = realmCRUDModel.filterTodayReadRealmArray[indexPath.row]["RealmProductName"]
-        cellTodayJANLabel.text = realmCRUDModel.filterTodayReadRealmArray[indexPath.row]["RealmJANCode"]
-        cellTodayDeadlineLabel.text = realmCRUDModel.filterTodayReadRealmArray[indexPath.row]["RealmDeadlineDay"]
+        cellTodayProductLabel.text = realmCRUDModel.filterTagReadResultArray[indexPath.row]["RealmProductName"]
+        cellTodayJANLabel.text = realmCRUDModel.filterTagReadResultArray[indexPath.row]["RealmJANCode"]
+        cellTodayDeadlineLabel.text = realmCRUDModel.filterTagReadResultArray[indexPath.row]["RealmDeadlineDay"]
         
         cell.layer.cornerRadius = 20.0
         cell.layer.borderWidth = 1.0
@@ -72,12 +67,3 @@ extension TodayListViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
 }
-    
-
-
-    
-
-
-    
-    
-
