@@ -29,7 +29,7 @@ extension SegmentedControl{
            for segmentCount in 0...realmCRUDModel.realmTagArray.count - 1{
          
                 uiSegmentControl.insertSegment(withTitle: realmCRUDModel.realmTagArray[segmentCount], at: segmentCount, animated: true)
-            
+                
            }
         }
         
@@ -37,7 +37,15 @@ extension SegmentedControl{
         
         uiSegmentControl.selectedSegmentTintColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)
         
+        uiSegmentControl.addTarget(self, action: #selector(tagSearch), for: .valueChanged)
+        
         targetView.addSubview(uiSegmentControl)
+    }
+    
+    @objc func tagSearch(sender:UISegmentedControl){
+        
+        realmCRUDModel.filterTagReadRealm(selectTag: realmCRUDModel.realmTagArray[sender.selectedSegmentIndex])
+        print(realmCRUDModel.filterTagReadResultArray)
     }
     
 }

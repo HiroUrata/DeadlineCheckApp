@@ -89,7 +89,7 @@ extension RealmCRUDModel{
             let realm = try Realm()
             self.filterTagReadResultArray = []
             
-            realm.objects(RealmDataSets.self).filter("tag == '\(selectTag)").forEach({
+            realm.objects(RealmDataSets.self).filter("tag == '\(selectTag)'").forEach({
                 
                 self.filterTagReadResultArray.append(["RealmProductName":$0.productName,
                                                       "RealmJANCode":$0.janCode,
