@@ -96,7 +96,7 @@ extension RealmCRUDModel{
                                                       "RealmDeadlineDay":$0.deadlineDay])
                 
             })
-            
+            print(self.filterTagReadResultArray)
         }catch{
             
             

@@ -18,7 +18,10 @@ class TagSearchViewController: UIViewController{
         super.viewDidLoad()
 
         segmentedControl.createSegment(targetView: self.view)
-      
+        segmentedControl.uiSegmentControl.addTarget(self, action: #selector(tagSearch), for: .valueChanged)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,13 +29,24 @@ class TagSearchViewController: UIViewController{
         
         
     }
-   
-
+    
+    @objc func tagSearch(sender:UISegmentedControl){
+        print(segmentedControl.realmCRUDModel.realmTagArray)
+        print(sender.selectedSegmentIndex)
+        realmCRUDModel.filterTagReadRealm(selectTag: segmentedControl.realmCRUDModel.realmTagArray[sender.selectedSegmentIndex])
+        
+    }
+  
 }
 
 
 extension TagSearchViewController:UITableViewDelegate,UITableViewDataSource{
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+        
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -67,3 +81,5 @@ extension TagSearchViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
 }
+
+
