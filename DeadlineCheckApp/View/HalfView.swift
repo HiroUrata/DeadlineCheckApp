@@ -91,8 +91,6 @@ class HalfView:UIViewController{
             
         }else if sender.text?.count == 10{
             
-            print(sender.text?.components(separatedBy: "/") as Any)
-            
             if Int((sender.text?.components(separatedBy: "/")[1])!)! > 12 {
                 
                 alert.warningAlert(messageContents: "月", alertTargetView: self)

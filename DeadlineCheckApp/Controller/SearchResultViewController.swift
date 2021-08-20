@@ -20,8 +20,7 @@ class SearchResultViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        print(realmCRUDModel.filterReadRealmArray)
-        print(filterReadResultArray)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

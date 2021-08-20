@@ -138,25 +138,21 @@ extension ViewController{
 
         if month < 10 && day < 10{
 
-            print("\(year)/\("0" + String(month))/\("0" + String(day))")
             self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\("0" + String(month))/\("0" + String(day))", targetView: self)
             slideVC.getSelectDay = "\(year)/\("0" + String(month))/\("0" + String(day))"
 
         }else if month < 10{
 
-            print("\(year)/\("0" + String(month))/\(day)")
             self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\("0" + String(month))/\(day)", targetView: self)
             slideVC.getSelectDay = "\(year)/\("0" + String(month))/\(day)"
 
         }else if day < 10{
 
-            print("\(year)/\(month)/\("0" + String(day))")
             self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\("0" + String(month))/\(day)", targetView: self)
             slideVC.getSelectDay = "\(year)/\("0" + String(month))/\(day)"
 
         }else{
 
-            print("\(year)/\(month)/\(day)")
             self.realmCRUDModel.filterSignUpDayReadRealm(SignUpDay: "\(year)/\(month)/\(day)", targetView: self)
             slideVC.getSelectDay = "\(year)/\(month)/\(day)"
         }

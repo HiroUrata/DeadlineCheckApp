@@ -21,7 +21,6 @@ class TodayListViewController: UIViewController {
         super.viewDidLoad()
 
         self.getDateModel.todayGetDate()
-        print(self.getDateModel.todayDate)
         realmCRUDModel.filterDayReadRealm(selectDay: getDateModel.todayDate, targetView: self)
        
     }

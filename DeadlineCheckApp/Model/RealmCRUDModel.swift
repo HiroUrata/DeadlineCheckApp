@@ -96,7 +96,7 @@ extension RealmCRUDModel{
                                                       "RealmDeadlineDay":$0.deadlineDay])
                 
             })
-            print(self.filterTagReadResultArray)
+
         }catch{
             
             
@@ -177,7 +177,6 @@ extension RealmCRUDModel{
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    print("1")
                 }
                 
             case(false,false,true):
@@ -187,7 +186,6 @@ extension RealmCRUDModel{
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    print("2")
                 }
                 
             case(false,true,false):
@@ -197,7 +195,6 @@ extension RealmCRUDModel{
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    print("3")
                 }
                 
             case(true,false,false):
@@ -207,7 +204,6 @@ extension RealmCRUDModel{
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    print("4")
                 }
                 
             case(true,true,false):
@@ -217,7 +213,6 @@ extension RealmCRUDModel{
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    print("5")
                 }
                 
             case(true,false,true):
@@ -227,7 +222,6 @@ extension RealmCRUDModel{
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    print("6")
                 }
                 
             case(false,true,true):
@@ -237,7 +231,6 @@ extension RealmCRUDModel{
                     self.filterReadRealmArray.append(["filterRealmProductName":readRealm.productName,
                                                       "filterRealmJANCode":readRealm.janCode,
                                                       "filterRealmDeadlineDay":readRealm.deadlineDay])
-                    print("7")
                 }
                 
             case(true,true,true):
@@ -248,11 +241,8 @@ extension RealmCRUDModel{
         }catch{
             
             self.alert.createAlert(messageContents: "読み込み", alertTargetView: targetView)
-            print("10")
         }
         
-        print(filterReadRealmArray)
-        print("11")
     }
     
 }

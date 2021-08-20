@@ -31,8 +31,7 @@ class TagSearchViewController: UIViewController{
     }
     
     @objc func tagSearch(sender:UISegmentedControl){
-        print(segmentedControl.realmCRUDModel.realmTagArray)
-        print(sender.selectedSegmentIndex)
+        
         realmCRUDModel.filterTagReadRealm(selectTag: segmentedControl.realmCRUDModel.realmTagArray[sender.selectedSegmentIndex])
 
     }
