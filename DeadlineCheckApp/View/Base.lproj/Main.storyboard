@@ -69,7 +69,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FVl-c0-trp"/>
-                        <color key="backgroundColor" red="1" green="0.40516897070000002" blue="0.5123178142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="Dxt-8T-hcf"/>
                     <connections>
@@ -347,7 +347,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mdV-tE-eyI"/>
-                        <color key="backgroundColor" red="1" green="0.40516897070542335" blue="0.51231781423093326" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="plus.rectangle.on.rectangle.fill" catalog="system" id="z6S-yX-VKh"/>
                     <connections>
