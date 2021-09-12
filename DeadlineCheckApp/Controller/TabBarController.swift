@@ -20,11 +20,13 @@ class TabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tabBar.barTintColor =  UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)
-        tabBar.tintColor = .white
+        //tabBar.barTintColor =  UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)  //.blackもいい感じ
+        tabBar.tintColor = .black
+        tabBar.unselectedItemTintColor = .white
+        tabBar.barStyle = .black //barTintColorを使わない
+        
         tabBar.layer.masksToBounds = true
         tabBar.layer.cornerRadius = 20.0
-        
 
         navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchAlert)),
                                                    UIBarButtonItem(title: "Today", style: .done, target: self, action: #selector(showTodayList))]
